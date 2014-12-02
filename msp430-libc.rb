@@ -12,6 +12,7 @@ class Msp430Libc < Formula
   end
 
   depends_on 'tduehr/msp430/msp430mcu'
+  depends_on 'tduehr/msp430/msp430-binutils'
   depends_on 'gettext' => :build
   depends_on 'tduehr/msp430/msp430-gcc' => :build
   
