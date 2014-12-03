@@ -7,8 +7,8 @@ class Msp430Gcc < Formula
   sha256  'e8f5853d4eec2f5ebaf8a72ae4d53c436aacf98153b2499f8635b48c4718a093'
   head 'git://mspgcc.git.sourceforge.net/gitroot/mspgcc/gcc'
 
-  depends_on 'tduehr/msp430/msp430mcu'
-  depends_on 'tduehr/msp430/msp430-binutils'
+  depends_on 'luismarques/msp430/msp430mcu'
+  depends_on 'luismarques/msp430/msp430-binutils'
   depends_on 'gmp'
   depends_on 'mpfr'
   depends_on 'libmpc'
@@ -79,8 +79,8 @@ class Msp430Gcc < Formula
       # copy include and lib files from msp430mcu to where msp430-gcc searches for them
       # this wouldn't be necessary with a standard prefix
       msp430 = prefix + 'msp430'
-      msp430mcu = Formula.factory('tduehr/msp430/msp430mcu')
-      msp430_binutils = Formula.factory('tduehr/msp430/msp430-binutils')
+      msp430mcu = Formula.factory('luismarques/msp430/msp430mcu')
+      msp430_binutils = Formula.factory('luismarques/msp430/msp430-binutils')
       ohai "copying #{msp430mcu.prefix+'msp430'} -> #{prefix}"
       cp_r msp430mcu.prefix+"msp430", prefix
       ohai "copying #{msp430_binutils.prefix+'msp430'} -> #{prefix}"

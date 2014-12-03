@@ -11,10 +11,10 @@ class Msp430Libc < Formula
     sha256  'cbd78f468e9e3b2df9060f78e8edb1b7bfeb98a9abfa5410d23f63a5dc161c7d'
   end
 
-  depends_on 'tduehr/msp430/msp430mcu'
-  depends_on 'tduehr/msp430/msp430-binutils'
+  depends_on 'luismarques/msp430/msp430mcu'
+  depends_on 'luismarques/msp430/msp430-binutils'
   depends_on 'gettext' => :build
-  depends_on 'tduehr/msp430/msp430-gcc' => :build
+  depends_on 'luismarques/msp430/msp430-gcc' => :build
   
   option 'disable-printf-int64', 'Remove 64-bit integer support to printf formats'
   option 'disable-printf-int32', 'Remove 32-bit integer support from printf formats'
@@ -27,7 +27,7 @@ class Msp430Libc < Formula
   end
   
   def install
-    msp430_gcc = Formula.factory('tduehr/msp430/msp430-gcc')
+    msp430_gcc = Formula.factory('luismarques/msp430/msp430-gcc')
     args = []
     args << '--disable-printf-int64' if build.include? 'disable-printf-int64'
     args << '--disable-printf-int32' if build.include? 'disable-printf-int32'
